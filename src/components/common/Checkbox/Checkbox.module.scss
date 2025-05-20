@@ -10,20 +10,20 @@
 .root {
   position: relative;
   padding-left: 35px;
-  cursor: pointer;
   font-size: 16px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
+    cursor: pointer;
 }
 
 .checkmark {

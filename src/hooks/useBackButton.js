@@ -6,6 +6,7 @@ export function useNavigationHelpers() {
 
   const goBack = useCallback(() => navigate(-1), [navigate]);
   const goHome = useCallback(() => navigate('/'), [navigate]);
+  const goSigin = useCallback(() => navigate('/signin'), [navigate]);
 
-  return { goBack, goHome };
+  return { goBack, goHome, goSigin };
 }

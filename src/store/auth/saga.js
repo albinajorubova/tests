@@ -18,10 +18,9 @@ import {
 
 function* signinSaga(action) {
  try {
-   const response = yield call(api.post, 'signin', action.payload);
+   const response = yield call(api.post, '/signin', action.payload);
    yield put(signinSuccess(response.data));
  } catch (error) {
-  console.error("Signin error:", error.response?.data.error);
    const errorMessage =
    error.response?.data?.message || error.message || 'Ошибка входа';
    yield put(signinFailure(errorMessage));
@@ -30,7 +29,7 @@ function* signinSaga(action) {
 
 function* fetchUserDataSaga() {
   try {
-    const response = yield call(api.get, 'users/current');
+    const response = yield call(api.get, '/users/current');
     yield put(fetchUserSuccess(response.data));
   } catch (error) {
     yield put(fetchUserFailure(error.message));
@@ -39,20 +38,18 @@ function* fetchUserDataSaga() {
   
 function* signupSaga(action) {
   try {
-    const response = yield call(api.post, 'signup', action.payload);
+    const response = yield call(api.post, '/signup', action.payload);
     yield put(signupSuccess(response.data));
     } catch (error) {
-    console.error("Signup error:", error.response?.data);
     yield put(signupFailure(error.response?.data?.message || error.message));
   }
 }
 
-function* logoutSaga(action) {
+function* logoutSaga() {
   try {
-    yield call(api.delete, 'logout', action.payload);
+    yield call(api.delete, '/logout');
     yield put(logoutSuccess());
     } catch (error) {
-    console.error("Signup error:", error.response?.data);
     yield put(logoutFailure(error.response?.data?.message || error.message));
   }
 }
