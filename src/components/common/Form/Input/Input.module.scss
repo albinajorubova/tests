@@ -1,0 +1,36 @@
+.input {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #fefefe;
+  background-color: #fefefe;;
+  border-radius: 50px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  opacity: 1;             
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.errorMessage {
+  margin-left: 3%;
+  color: #fefefe;
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+  
+.errorMessageVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+  

@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  gap: 10px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 20px 17.3%;
+  margin: 0 auto;
+}
