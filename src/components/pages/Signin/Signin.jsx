@@ -21,8 +21,13 @@ const Signin = () => {
          goHome();
       }
       if (!user && error && !loading) {
-         showSnackbar(error, 'error'); 
-       }
+        if(error.response?.data.error === "username or password is invalid") {
+        showSnackbar("Неверный логин или пароль", 'error');
+        }
+        else {
+         showSnackbar("Что-то пошло не так, попробуйте заново", 'error');
+        }
+      }
     }, [user, loading, error, goHome, showSnackbar]);
 
   return (

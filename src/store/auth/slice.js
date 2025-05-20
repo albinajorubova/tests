@@ -28,7 +28,7 @@ const authSlice = createSlice({
         state.error = null;
     },
     signupSuccess(state, action) {
-        state.user = action.payload.user;
+        state.user = action.payload;
         state.loading = false;
     },
     signupFailure(state, action) {
@@ -41,7 +41,7 @@ const authSlice = createSlice({
       state.error = null;
     },
     fetchUserSuccess(state, action) {
-      state.user = action.payload.user;
+      state.user = action.payload;
       state.loading = false;  
     },
     fetchUserFailure(state, action) {

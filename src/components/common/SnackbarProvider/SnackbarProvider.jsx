@@ -25,7 +25,7 @@ export const SnackbarProvider = ({ children }) => {
     if (snackbar.visible) {
       const timer = setTimeout(() => {
         hideSnackbar();
-      }, 1000000);
+      }, 10000);
       return () => clearTimeout(timer);
     }
   }, [snackbar.visible, hideSnackbar]);

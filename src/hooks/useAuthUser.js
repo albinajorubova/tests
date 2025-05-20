@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
-import { signupRequest, signinRequest, fetchUserRequest } from "../store/auth/slice";
+import { signupRequest, signinRequest, fetchUserRequest, logoutRequest } from "../store/auth/slice";
 
 export const useAuthUser = () => {
   const dispatch = useDispatch();
@@ -17,9 +17,14 @@ export const useAuthUser = () => {
     dispatch(fetchUserRequest());
   }, [dispatch]);
 
+  const logOut = useCallback(() => {
+    dispatch(logoutRequest());
+  }, [dispatch]);
+
   return {
     signUp,
     signIn,
     fetchUser,
+    logOut,
   };
 };
