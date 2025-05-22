@@ -17,21 +17,20 @@ const Home = () => {
     await logOut(); 
     if (!error & !loading) {
       goSigin();
-    } else {
-      showSnackbar("Упс, что-то пошло не так", "error");
+    } else if (!loading && error) {
+      showSnackbar(error, 'error');
     }
   };
 
   const handleGetUser = async () => {
     await fetchUser(); 
   };
-  
 
   useEffect(() => {
     if (!loading && !error && user) {
       console.log(user);
     } else if (!loading && error) {
-      showSnackbar("Упс, что-то пошло не так", "error");
+      showSnackbar(error, 'error');
     }
   }, [user, loading, error, showSnackbar]);
   

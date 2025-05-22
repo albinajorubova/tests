@@ -8,17 +8,22 @@ import { formFields } from '../../../stubs/data/signupFormFields';
 import { selectAuth } from "../../../store/auth/slice";
 import { useAuthUser } from '../../../hooks/useAuthUser';
 import { useNavigationHelpers } from '../../../hooks/useBackButton';
+import { useSnackbar } from '../../common/SnackbarProvider/SnackbarProvider';
 
 const Signup = () => {
   const { signUp } = useAuthUser();
   const { loading, error, user} = useSelector(selectAuth);
   const {goBack} = useNavigationHelpers();
+   const { showSnackbar } = useSnackbar();
 
   useEffect(() => {
     if (user && !loading && !error) {
       goBack();
     }
-  }, [user, loading, error, goBack]);
+    else if (!loading && error) {
+      showSnackbar(error, 'error');
+    }
+  }, [user, loading, error, goBack, showSnackbar]);
 
   return (
     <AuthLayout

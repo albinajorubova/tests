@@ -16,19 +16,13 @@ const Signin = () => {
    const {goHome} = useNavigationHelpers();
    const { showSnackbar } = useSnackbar();
 
-    useEffect(() => {
-      if (user && !loading && !error) {
-         goHome();
-      }
-      if (!user && error && !loading) {
-        if(error.response?.data.error === "username or password is invalid") {
-        showSnackbar("Неверный логин или пароль", 'error');
-        }
-        else {
-         showSnackbar("Что-то пошло не так, попробуйте заново", 'error');
-        }
-      }
-    }, [user, loading, error, goHome, showSnackbar]);
+  useEffect(() => {
+    if (user && !loading && !error) {
+      goHome();
+  } else if (!loading && error) {
+      showSnackbar(error, 'error');
+    }
+  }, [user, loading, error, showSnackbar, goHome]);
 
   return (
      <AuthLayout

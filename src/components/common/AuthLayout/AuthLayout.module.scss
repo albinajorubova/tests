@@ -21,3 +21,10 @@
   width: 100%;
   margin: auto;
 }
+
+@media (max-width: 768px) {
+  .root, 
+  .content {
+    gap: 20px;
+  }
+}
