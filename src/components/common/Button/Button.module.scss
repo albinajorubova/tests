@@ -35,3 +35,9 @@
     transform: rotate(360deg);
   }
 } 
+
+@media (max-width: 768px) {
+  .button {
+    max-width: 300px;
+  }
+}

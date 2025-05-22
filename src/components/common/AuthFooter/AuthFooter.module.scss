@@ -1,9 +1,18 @@
 .root {
+  display: flex;
+  gap: 5px;
   margin: auto;
   color: #fefefe;
 }
 
 .link {
-  margin-left: 5px;
   font-weight: 600;
 }
+
+@media (max-width: 421px) {
+  .root {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

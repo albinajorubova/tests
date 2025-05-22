@@ -21,7 +21,7 @@
 
 .errorMessage {
   margin-left: 3%;
-  color: #fefefe;
+  color: #e74c3c;
   font-size: 14px;
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -33,4 +33,13 @@
   transform: translateY(0);
   pointer-events: auto;
 }
-  
+
+@media (max-width: 768px) {
+  .input {
+    padding: 16px;
+  }
+
+  .errorMessage {
+    font-size: 12px;
+  }
+}
